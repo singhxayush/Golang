@@ -28,6 +28,7 @@ func main() {
 	// intSlice = append(intSlice, intSlice1...)
 	// fmt.Println(intSlice)
 
+	
 	// here, 3, 4 is length and capacity of slice, providing capacity improves performace by avoiding having to reallocate the array
 	var intSlice2 []int32 = make(int32[], 3, 4)
 }
