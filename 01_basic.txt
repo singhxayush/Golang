@@ -1,0 +1,10 @@
+Structure of GO code :
+
+    Modules and Packages
+
+    Package is folder that contains collection of GO files
+    Collection of these Packages is called Modules
+
+1. When initializing a project we basically initialize a Module first
+    syntax : go mod init {module name : mostly it is the location in its github repo(why?)}
+    ls
