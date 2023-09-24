@@ -56,7 +56,7 @@ func main() {
 	var myMap = map[string]int{"Lion":1, "Deer":33, "Fox":12, "Elephant":2}
 	fmt.Println(myMap)
 	
-	// delete(myMap, "Lion")
+	// delete(myMap, "Lion") // here the delete function deletes by ref, hence 
 
 	fmt.Println(myMap["Lion"])
 	fmt.Println(myMap["wosdn"])
@@ -69,6 +69,7 @@ func main() {
 	// 	fmt.Println("Not present")
 	// }
 
+	// No order is maintained in a map, hence when iterating, printing order wont remain same everytime
 	for itr := range myMap {
 		// fmt.Println(itr)
 		fmt.Printf("%v : %v\n", itr, myMap[itr])
@@ -80,5 +81,13 @@ func main() {
 		fmt.Println(key, " : ",val)
 	}
 
+	for i:=0; i<10; i++ {
+		fmt.Printf("%v ", i);
+	}
+
+	for i:=0; i<=100; i++ {
+		fmt.Println(i)
+	}
+	
 	
 }
