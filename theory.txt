@@ -1,0 +1,41 @@
+A new Open source prog Lang
+concurrent, garbage-collected, builds fast at scale
+
+
+Structure of GO code :
+
+    Modules and Packages
+
+    Package is folder that contains collection of GO files
+    Collection of these Packages is called Modules
+
+~ some resources to consider 
+
+    # How to Write Go Code : https://go.dev/doc/code
+
+    - Go programs are organized into packages
+    - A package is a collection of source files in the same directory that are compiled together
+    - Functions, types, variables, and constants defined in one source file are visible to all other source files within the same package.
+
+    - A repository contains one or more modules. A module is a collection of related Go packages that are released together
+    - A Go repository typically contains only one module, located at the root of the repository
+    - A file named go.mod there declares the module path: the import path prefix for all packages within the module
+    - The module contains the packages in the directory containing its go.mod file as well as subdirectories of that directory, up to the next subdirectory containing another go.mod file (if any).
+    - 
+
+    # Tutorials : https://go.dev/doc/tutorial/
+
+    - 
+
+
+
+
+
+1. When initializing a project we basically initialize a Module first
+    syntax : go mod init {module name : mostly it is the location in its github repo(why?)}
+
+
+
+- On the other hand, thinking about the problem from a Go perspective could produce a successful but quite different program. In other words, to write Go well, it's important to understand its properties and idioms
+
+- 

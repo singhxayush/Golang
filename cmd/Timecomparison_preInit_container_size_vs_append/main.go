@@ -25,3 +25,11 @@ func timeLoop(slice []int, n int) time.Duration {
 
 	return time.Since(t_start)
 }
+
+/* 
+
+	Result :
+	Time without Pre allocation     : 1.909990545s
+	Time with Pre allocation        : 91ns
+
+*/

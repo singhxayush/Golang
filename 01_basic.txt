@@ -1,10 +1,101 @@
-Structure of GO code :
+A new Open source prog Lang
+concurrent, garbage-collected, builds fast at scale
+
+
+# go community : https://forum.golangbridge.org/top?period=monthly
+# practical-go-lessons.com : https://www.practical-go-lessons.com/chap-1-programming-a-computer
+# go-use-cases : https://go.dev/solutions/use-cases
+# go-CLI-stuff : https://go.dev/solutions/clis
+# go-CLOUD-stuff : https://go.dev/solutions/cloud
+# go-web : https://go.dev/solutions/webdev
+# go-std-lib : https://pkg.go.dev/std
+# go-blog : https://go.dev/blog/all
+
+
+~ Structure of GO code :
 
     Modules and Packages
 
-    Package is folder that contains collection of GO files
+    Package is folder that contains collection of Go files
     Collection of these Packages is called Modules
+
+
+~ Some resources to consider 
+
+    # How to Write Go Code : https://go.dev/doc/code
+
+    - Go programs are organized into packages
+    - A package is a collection of source files in the same directory that are compiled together
+    - Functions, types, variables, and constants defined in one source file are visible to all 
+    other source files within the same package.
+
+    - A repository contains one or more modules. A module is a collection of related Go packages that are released together
+    - A Go repository typically contains only one module, located at the root of the repository
+    - A file named go.mod there declares the module path: the import path prefix for all packages within the module
+    - The module contains the packages in the directory containing its go.mod file as well as subdirectories of 
+    that directory, up to the next subdirectory containing another go.mod file (if any).
+    
+
+~ Why Go : https://opensource.googleblog.com/2009/11/hey-ho-lets-go.html
+
 
 1. When initializing a project we basically initialize a Module first
     syntax : go mod init {module name : mostly it is the location in its github repo(why?)}
-    ls
+
+
+
+- On the other hand, thinking about the problem from a Go perspective could produce a successful 
+but quite different program. In other words, to write Go well, it's important to understand its 
+properties and idioms
+
+- 
+
+
+#CSP
+
+
+    CSP concurrency feature is a way of writing concurrent code that is easy to reason 
+    about and less prone to errors. It is based on the Communicating Sequential 
+    Processes (CSP) model, which is a formal mathematical theory of concurrency.
+
+    CSP concurrency features are typically implemented using channels, which are a 
+    way for processes to communicate with each other. Channels are blocking, meaning 
+    that a process will wait until a message is available before reading it. This 
+    makes it easy to synchronize the execution of different processes.
+
+    Another important feature of CSP concurrency is guarded commands. Guarded commands 
+    are a way to express conditional execution in a concurrent setting. A guarded 
+    command is a statement that is only executed if a certain condition is met. This 
+    makes it easy to write code that is robust to errors and unexpected events.
+
+    CSP concurrency features are implemented in a number of different programming 
+    languages, including Go, Erlang, and Clojure. They are particularly well-suited 
+    for writing concurrent code that is distributed across multiple machines.
+
+    Here is a simple example of CSP concurrency in Go:
+
+        // Create two channels, one for sending and one for receiving.
+        send := make(chan int)
+        receive := make(chan int)
+
+        // Start a goroutine to send a message to the other channel.
+        go func() {
+        send <- 1
+        }()
+
+        // Start a goroutine to receive a message from the other channel.
+        go func() {
+        message := <-receive
+        fmt.Println(message) // Prints "1"
+        }()
+
+        // Wait for both goroutines to finish executing.
+        time.Sleep(time.Second)
+
+    In this example, the two goroutines can execute concurrently without any risk of race 
+    conditions or deadlocks. This is because the goroutines are communicating with each 
+    other using channels, which are blocking and synchronized.
+
+    CSP concurrency features can be used to write a wide variety of concurrent 
+    applications, such as web servers, distributed databases, and message queues. 
+    They are a powerful tool for writing robust and scalable concurrent code.
